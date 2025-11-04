@@ -1,0 +1,17 @@
+diff --git a/android/build.gradle b/android/build.gradle
+index 1234567..89abcde 100644
+--- a/android/build.gradle
++++ b/android/build.gradle
+@@ -1,6 +1,11 @@
+ repositories {
+-    maven { url "http://jcenter.bintray.com" }
++    google()
++    mavenCentral()
++    maven { url 'https://www.jitpack.io' }
++
++    // ✅ Fix insecure protocol issue
++    maven {
++        url "http://jcenter.bintray.com"
++        allowInsecureProtocol = true
++    }
+ }
