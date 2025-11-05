@@ -4896,7 +4896,7 @@ export default function MenuScreen() {
           <TouchableOpacity
             style={styles.integratedActionButton}
             activeOpacity={0.7}
-            onPress={() => router.push("/party/hold")}
+            // onPress={() => router.push("/party/hold")}
           >
             <Ionicons name="timer-outline" size={16} color="#FFF" style={{ marginRight: 4 }} />
             <Text style={styles.integratedButtonText}>HOLD</Text>
@@ -4905,8 +4905,8 @@ export default function MenuScreen() {
           <TouchableOpacity
             style={styles.integratedActionButton}
             activeOpacity={0.7}
-            onPress={() => router.push("/party/parcel")}
-          >
+          //   onPress={() => router.push("/party/parcel")}
+           >
             <Feather name="package" size={16} color="#FFF" style={{ marginRight: 4 }} />
             <Text style={styles.integratedButtonText}>Parcel</Text>
           </TouchableOpacity>
@@ -5058,18 +5058,38 @@ export default function MenuScreen() {
               <Text style={styles.printBillText}>PRINT BILL</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
-              style={styles.primaryButton}
-              onPress={() =>
-                router.push({
-                  pathname: "/bill",
-                  params: { cart: JSON.stringify(cart), paymentMethod },
-                })
-              }
-            >
-              <Text style={styles.primaryButtonText}>Next</Text>
-              <Feather name="arrow-right" size={16} color="#fff" style={{ marginLeft: 5 }} />
-            </TouchableOpacity>
+            {/* <TouchableOpacity
+  style={styles.primaryButton}
+  onPress={() =>
+    router.push({
+      pathname: "/bill",
+      params: { cart: JSON.stringify(cart), paymentMethod },
+    })
+  }
+>
+  <Text style={styles.primaryButtonText}>Next</Text>
+  <Feather name="arrow-right" size={16} color="#fff" style={{ marginLeft: 5 }} />
+</TouchableOpacity> */}
+
+
+
+<TouchableOpacity
+  style={styles.primaryButton}
+  onPress={() =>
+    router.push({
+      pathname: "/party/bill",
+      params: { 
+        cart: JSON.stringify(cart), 
+        paymentMethod 
+      },
+    })
+  }
+>
+  <Text style={styles.primaryButtonText}>Next</Text>
+  <Feather name="arrow-right" size={16} color="#fff" style={{ marginLeft: 5 }} />
+</TouchableOpacity>
+
+
           </View>
         </View>
       )}
